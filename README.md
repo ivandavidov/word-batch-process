@@ -37,7 +37,7 @@ A helper program which automatically processes placeholders in MS Word files.
    Sample template text:
    
    ```
-   __name__ is __age__ years old and his ID is __id__.
+   __name__ is __age__ years old with ID __id__.
    ```
    
 4. Edit ``wordbatch.cmd`` and set the appropriate value for ``JAVA_HOME`` (either JDK or JRE).
