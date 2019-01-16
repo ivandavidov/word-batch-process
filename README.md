@@ -14,8 +14,11 @@ A helper program which automatically processes placeholders in MS Word files.
 3. Download [Apache Commons IO](https://commons.apache.org/proper/commons-io) and extract all libraries in ``lib``.
 4. Edit ``compile.cmd`` and set the appropriate value for ``JAVA_HOME`` (must be JDK).
 5. Run ``compile.cmd``.
-6. Create MS Excel file with arbitrary name (e.g. 'placeholders.xlsx').
-7. Create table in the first sheet. The first row contains the placeholders. Each next row contains the placeholder values.
+
+### How to use
+
+1. Create MS Excel file with arbitrary name (e.g. 'placeholders.xlsx').
+2. Create table in the first sheet. The first row contains the placeholders. Each next row contains the placeholder values.
 
    Example:
 
@@ -26,7 +29,7 @@ A helper program which automatically processes placeholders in MS Word files.
     3 | Marina |  20
    ```
 
-8. Create MS Word document with arbitrary name. This will be your template. Surround each placeholder with ``__``. Don't use speciall formatting/highlighting around the placeholders. The template file itself can contain one or more placeholders.
+3. Create MS Word document with arbitrary name. This will be your template. Surround each placeholder with ``__``. Don't use speciall formatting/highlighting around the placeholders. The template file itself can contain one or more placeholders.
 
    
    Sample file name: ``template__id__test.docx``
@@ -37,6 +40,6 @@ A helper program which automatically processes placeholders in MS Word files.
    __name__ is __age__ years old and his ID is __id__.
    ```
    
-9. Edit ``wordbatch.cmd`` and set the appropriate value for ``JAVA_HOME`` (either JDK or JRE).
-10. Run ``wordbatch.cmd``.
-11. The generated MS Word files are in the folder ``result``.
+4. Edit ``wordbatch.cmd`` and set the appropriate value for ``JAVA_HOME`` (either JDK or JRE).
+5. Run ``wordbatch.cmd``.
+6. The generated MS Word files are in the newly created folder ``result``.
