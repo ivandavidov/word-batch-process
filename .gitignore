@@ -1,0 +1,6 @@
+lib/**
+result/**
+jre/**
+*.xlsx
+*.docx
+*.class

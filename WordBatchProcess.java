@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +28,7 @@ public class WordBatchProcess {
     private int numDocs = 0;
     private final String PLACEHOLDER_SEPARATOR = "__";
     private final String RESULT_DIR = "result";
+    private final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.##");
 
     public static void main(String... args) throws Exception {
         WordBatchProcess wbc = new WordBatchProcess();
@@ -47,7 +49,7 @@ public class WordBatchProcess {
     private void preparePlaceholders() throws Exception {
         File dir = new File(".");
 
-        File[] excelFiles = dir.listFiles((File directory, String name) -> name.endsWith(".xlsx"));
+        File[] excelFiles = dir.listFiles((directory, name) -> name.endsWith(".xlsx"));
 
         if(excelFiles == null || excelFiles.length <= 0) {
             throw new RuntimeException("The current directory contains no MS Excel files. Cannot continue.");
@@ -97,11 +99,10 @@ public class WordBatchProcess {
                         break;
                     case NUMERIC:
                         double dval =  cell.getNumericCellValue();
-                        int ival = (int)dval;
-                        value = Integer.toString(ival);
+                        value = DECIMAL_FORMAT.format(dval);
                         break;
                     default:
-                        value = cell.getStringCellValue();
+                        value = cell.getRawValue();
                 }
 
                 String key = keys[j - firstCellNum];
@@ -126,7 +127,7 @@ public class WordBatchProcess {
     private void processWordFiles() throws Exception {
         File dir = new File(".");
 
-        File[] wordFiles = dir.listFiles((File directory, String name) -> name.endsWith(".docx"));
+        File[] wordFiles = dir.listFiles((directory, name) -> name.endsWith(".docx"));
 
         if(wordFiles == null || wordFiles.length <= 0) {
             throw new RuntimeException("The current directory contains no MS Word files. Cannot continue.");
