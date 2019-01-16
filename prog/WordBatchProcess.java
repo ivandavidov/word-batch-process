@@ -43,8 +43,6 @@ public class WordBatchProcess {
         File dir = new File(".");
         String dirName = dir.getCanonicalPath();
         File resultDir = Paths.get(dirName, "result").toFile();
-        String resultDirName = resultDir.getCanonicalPath();
-        System.out.println(resultDirName);
         FileUtils.deleteDirectory(resultDir);
     }
 
