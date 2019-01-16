@@ -1,11 +1,11 @@
 # MS Word Placeholder Processor
 
+A helper program which automatically processes placeholders in MS Word files.
+
 ### Prerequisites
 
 * [Apache POI](https://poi.apache.org/)
 * [Apache Commons IO](https://commons.apache.org/proper/commons-io)
-
-A helper program which automatically processes placeholders in MS Word files.
 
 ### Compile
 
