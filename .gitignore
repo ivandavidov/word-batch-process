@@ -1,6 +1,6 @@
 lib/**
 result/**
-jre/**
+jdk/**
 *.xlsx
 *.docx
 *.class

@@ -28,7 +28,7 @@ import java.util.Set;
 public class WordBatchProcess {
     private Map<String, List<String>> placeholders = new HashMap<>();
     private int numDocs = 0;
-    private final String PLACEHOLDER_SEPARATOR = "__";
+    private final String PLACEHOLDER_SEPARATOR = "oo";
     private final String RESULT_DIR = "result";
     private final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.##");
 
